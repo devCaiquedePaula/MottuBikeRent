@@ -1,0 +1,5 @@
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d
+docker-compose down          
+
+dotnet ef database update  --project BackEnd.Infra.Data.EF --context PgDbContext -s BackEnd.Api --verbose
+dotnet ef migrations add StartProject --project BackEnd.Infra.Data.EF  --context PgDbContext -s BackEnd.Api --verbose

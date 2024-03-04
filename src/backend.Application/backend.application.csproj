@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+<PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+</PropertyGroup>
+
+<ItemGroup>
+    <ProjectReference Include="..\BackEnd.Domain\BackEnd.Domain.csproj" />
+</ItemGroup>
+<ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+</ItemGroup>
+<ItemGroup>
+    <None Remove="Dtos\" />
+    <None Remove="Dtos\Motos\" />
+    <None Remove="CQRS\" />
+    <None Remove="CQRS\Motos\" />
+    <None Remove="CQRS\Motos\Read\" />
+    <None Remove="CQRS\Motos\Write\" />
+    <None Remove="RabbitConsumer\" />
+</ItemGroup>
+<ItemGroup>
+    <Folder Include="Dtos\" />
+    <Folder Include="Dtos\Motos\" />
+    <Folder Include="CQRS\" />
+    <Folder Include="CQRS\Motos\" />
+    <Folder Include="CQRS\Motos\Read\" />
+    <Folder Include="CQRS\Motos\Write\" />
+    <Folder Include="RabbitConsumer\" />
+</ItemGroup>
+</Project>

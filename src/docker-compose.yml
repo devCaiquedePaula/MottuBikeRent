@@ -1,0 +1,22 @@
+version: "3.4"
+
+services:
+    rabbitmq:
+        image: "rabbitmq:3-management"
+
+    postgresdb:
+        image: postgres
+
+    pgadmin:
+        image: dpage/pgadmin4
+
+    backend.api:
+        image: ${DOCKER_REGISTRY-}backend
+        build:
+            context: .
+            dockerfile: BackEnd.Api/Dockerfile
+
+volumes:
+    mongo_data:
+    postgres_data:
+    pgadmin_data:
